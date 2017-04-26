@@ -1,0 +1,210 @@
+/*----- GENERAL STYLES ------*/
+
+@font-face {
+	font-family: Myriad-Regular;
+	src: url("../fonts/MyriadPro-Regular.otf");
+	font-weight: normal;
+}
+@font-face {
+	font-family: Myriad-Bold;
+	src: url("../fonts/MyriadPro-Bold.otf");
+	font-weight: bold;
+}
+@font-face {
+	font-family: Myriad-Italic;
+	src: url("../fonts/MyriadPro-It.otf");
+	font-weight: italic;
+}
+
+body {
+	font-family: Myriad-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+h1,h2,h3,h4 {
+	font-family:  Raleway, Myriad-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2.2em;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h3 .text-lg {
+	color: #0063a7;
+}
+
+.text-lg {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.text-rotated {
+	-moz-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+/**** .container override for larger screens ****/
+@media screen and (min-width: 992px) {
+	.container {
+		width: 60%;
+	}
+}
+
+/*----- NAV STYLES -----*/
+
+.navbar {
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 20px 50px 0 50px;
+}
+.logo img{
+	width: 50px;
+}
+.nav-links {
+	list-style: none;
+}
+.nav-links li{
+	display: inline;
+	margin-left: 30px;
+}
+.nav-links li a:link, .nav-links li a:visited {
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 3px;
+	color: #fff;
+	font-size: 1.25em;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+}
+
+.nav-links li a:hover, .nav-links li a:active {
+	text-decoration: none;
+}
+
+.nav-links li a.active {
+	border-bottom: 2px solid #fff;
+}
+
+/*----- MAIN STYLES -----*/
+
+.hero {
+	background: url("../../images/hero-bg.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	max-height: 800px;
+	min-height: 640px;
+}
+
+.hero > .row {
+	margin-right: 0;
+}
+
+.hero-overlay {
+	height: 100vh;
+	max-height: 800px;
+	min-height: 640px;
+	background: rgba(0,99,167,0.75);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero-text-container {
+	padding: 0;
+	color: #fff;
+	border: 5px solid #fff;
+	width: 600px;
+	height: 300px;
+	margin-left: -150px;
+	box-sizing: border-box;
+}
+
+.hero-welcome {
+	width: 130px;
+	height: 100%;
+	float: left;
+	background: rgba(255, 255,255,0.6);
+	box-sizing: border-box;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero-welcome p {
+	font-family: Raleway,Myriad-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	width: 300px;
+	font-weight: bold;
+	position: relative;
+	left: -90px;
+	top: -20px;
+	letter-spacing: 3px;
+	color: #222;
+	padding: 20px;
+
+}
+
+.hero-text {
+	float: left;
+	padding-top: 50px;
+	padding-left: 40px;
+
+}
+
+.hero-text h1 {
+	margin-bottom: 40px;
+}
+
+.hero-text a {
+	font-size: 0.85em;
+	letter-spacing: 0.5px;
+	color: #fff;
+}
+
+.hero-text a i{
+	font-size: 1.2em;
+	margin-right: 10px;
+}
+
+.hero-scroll {
+	position: absolute;
+	left: 30px;
+	bottom: 30px;
+}
+
+.hero .row{
+	position: relative;
+}
+
+.hero-whitegap {
+	width: 50%;
+	position: absolute;
+	bottom:0;
+	background: #fff;
+	height: 20px;
+}
+
+@media screen and (max-width: 992px) {
+	.hero-whitegap {
+		display: none;
+	}
+}
+
+.about {
+	padding: 100px 0;
+}
