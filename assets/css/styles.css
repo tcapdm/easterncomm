@@ -1,30 +1,29 @@
 /*----- GENERAL STYLES ------*/
 
 @font-face {
-	font-family: Myriad-Regular;
+	font-family: MyriadPro;
 	src: url("../fonts/MyriadPro-Regular.otf");
 	font-weight: normal;
+	font-style: normal
 }
 @font-face {
-	font-family: Myriad-Bold;
+	font-family: MyriadPro;
 	src: url("../fonts/MyriadPro-Bold.otf");
 	font-weight: bold;
+	font-style: normal;
 }
 @font-face {
-	font-family: Myriad-Italic;
+	font-family: MyriadPro;
 	src: url("../fonts/MyriadPro-It.otf");
-	font-weight: italic;
+	font-weight: normal;
+	font-style: italic;
 }
 
 body {
-	font-family: Myriad-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: MyriadPro,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #333;
-}
-
-h1,h2,h3,h4 {
-	font-family:  Raleway, Myriad-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 h1 {
@@ -39,7 +38,12 @@ h3 {
 	font-size: 2em;
 }
 
-h3 .text-lg {
+h4 {
+	font-size: 1.8em;
+}
+
+/**** Highlight/Color ****/
+.text-hl {
 	color: #0063a7;
 }
 
@@ -48,12 +52,9 @@ h3 .text-lg {
 	font-weight: bold;
 }
 
-.text-rotated {
-	-moz-transform: rotate(-90deg);
-	-webkit-transform: rotate(-90deg);
-	-o-transform: rotate(-90deg);
-	-ms-transform: rotate(-90deg);
-	transform: rotate(-90deg);
+.block-quote p {
+	font-style: italic;
+	font-size: 1.2em;
 }
 
 /**** .container override for larger screens ****/
@@ -72,8 +73,13 @@ h3 .text-lg {
 	width: 100%;
 	padding: 20px 50px 0 50px;
 }
+
+.logo {
+	width: 210px;
+}
+
 .logo img{
-	width: 50px;
+	width: 100%;
 }
 .nav-links {
 	list-style: none;
@@ -83,8 +89,7 @@ h3 .text-lg {
 	margin-left: 30px;
 }
 .nav-links li a:link, .nav-links li a:visited {
-	font-family: 'Oswald', sans-serif;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	color: #fff;
 	font-size: 1.25em;
 	padding-bottom: 5px;
@@ -147,7 +152,6 @@ h3 .text-lg {
 }
 
 .hero-welcome p {
-	font-family: Raleway,Myriad-Regular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	width: 300px;
 	font-weight: bold;
 	position: relative;
@@ -156,7 +160,11 @@ h3 .text-lg {
 	letter-spacing: 3px;
 	color: #222;
 	padding: 20px;
-
+	-moz-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 }
 
 .hero-text {
@@ -179,12 +187,6 @@ h3 .text-lg {
 .hero-text a i{
 	font-size: 1.2em;
 	margin-right: 10px;
-}
-
-.hero-scroll {
-	position: absolute;
-	left: 30px;
-	bottom: 30px;
 }
 
 .hero .row{
