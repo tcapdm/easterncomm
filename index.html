@@ -19,7 +19,7 @@
 			</div>
 			<div class="pull-right">
 				<ul class="nav-links">
-					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">Home</a></li>
 					<li><a href="#">Products</a></li>
 					<li><a href="#">News</a></li>
 					<li><a href="#">Contact</a></li>
@@ -30,11 +30,8 @@
 	
 	<main>
 		<div class="hero">
-			<div class="row">
-				<div class="col-md-6">
-
-				</div>
-				<div class="col-md-6 hero-overlay">
+			<div class="row" style="background: url('images/hero-bg.jpg');">
+				<div class="col-md-6 col-md-offset-6 hero-overlay">
 					<div class="hero-text-container">
 						<div class="hero-welcome">
 							<p class="text-rotated">WELCOME TO MORESA</p>
@@ -49,23 +46,25 @@
 			</div><!--/row-->
 		</div><!--/hero-->
 		
-		<div class="about">
-			<div class="page pull-left">
-				<div>MORESA</div>
-				<div>01</div>
-				<h2>ABOUT</h2>
+		<div class="about clearfix">
+			<div class="page">
+				<div class="page-text">MORESA</div>
+				<div class="page-number">01</div>
+				<h2 class="page-desc">ABOUT</h2>
 			</div>
 			
-			<div class="container">
+			<div class="container clearfix">
 				<div class="row">
 					<div class="col-md-6">
 						<h3>Helping brands to<br><span class="text-lg text-hl">Achieve Success</span></h3>
-						<div class="block-quote">
+						<div class="about-quote">
 							<p>Veritatis facilis culpa, beatae sit ratione corrupti molestiae velit minima distinctio iure ad quod impedit.</p>
-							<div><strong>JAMES ANDERSON</strong>, CEO</div>
+							<div><i class="fa fa-quote-left" aria-hidden="true"></i><strong>JAMES ANDERSON</strong>, CEO</div>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem earum voluptatum aliquam deserunt eius, quasi nesciunt, quibusdam pariatur architecto atque reiciendis nisi recusandae, ab neque quo soluta, odit obcaecati? Voluptates!</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem earum voluptatum aliquam deserunt eius, quasi nesciunt</p>
+						<div class="about-text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem earum voluptatum aliquam deserunt eius, quasi nesciunt, quibusdam pariatur architecto atque reiciendis nisi recusandae, ab neque quo soluta, odit obcaecati? Voluptates!</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem earum voluptatum aliquam deserunt eius, quasi nesciunt</p>
+						</div>
 					</div>
 					<div class="col-md-6">
 						<img src="http://placehold.it/530x220" alt="">
@@ -78,59 +77,86 @@
 		</div><!--/about-->
 		
 		<div class="products">
-			<div class="page pull-left">
-				<div>MORESA</div>
-				<div>02</div>
-				<h2>PRODUCTS</h2>
+			<div class="page">
+				<div class="page-text">MORESA</div>
+				<div class="page-number">02</div>
+				<h2 class="page-desc">PRODUCTS</h2>
 			</div>
 			
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="row">
-							<div class="col-xs-6">
-								<img src="http://placehold.it/260x260" alt="" class="img-responsive img">
-
+						<div class="prod-image-wrapper">
+							<div class="prod-image">
+								<a href="#" data-toggle="collapse" data-target="#prod-1"><img src="http://placehold.it/400x400" alt=""></a>
 							</div>
-							<div class="col-xs-6">
-								<img src="http://placehold.it/260x260" alt="" class="img-responsive">
-
+							<div class="prod-image">
+								<a href="#" data-toggle="collapse" data-target="#prod-2"><img src="http://placehold.it/400x400" alt=""></a>
 							</div>
-							<div class="col-xs-6">
-								<img src="http://placehold.it/260x260" alt="" class="img-responsive">
-
+							<div class="prod-image">
+								<a href="#" data-toggle="collapse" data-target="#prod-3"><img src="http://placehold.it/400x400" alt=""></a>
 							</div>
-							<div class="col-xs-6">
-								<img src="http://placehold.it/260x260" alt="" class="img-responsive">
-
+							<div class="prod-image">
+								<a href="#" data-toggle="collapse" data-target="#prod-4"><img src="http://placehold.it/400x400" alt=""></a>
 							</div>
 						</div>
-						
-						<div class="text-center">
-							<a href="#">&lt;--</a>
-							<a href="#">--&gt;</a>
-						</div>
+
+						<div class="prod-controls">
+							<div class="row">
+								<div class="col-xs-6">
+									<a href="#" class="pull-right"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+								</div>
+								<div class="col-xs-6">
+									<a href="#" class="pull-left"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+
+								</div>
+							</div><!--/row-->
+						</div><!--/prod-controls-->
 					</div>
 
 					<div class="col-md-6">
-						<div class="product-1">
+					
+						<div id="prod-1" class="collapse in">
 							<h3>Internet Services</h3>
-							<div>
-								<h4>Description</h4>
+							<div class="prod-desc">
+								<h4>DESCRIPTION</h4>
+								<p>Eastern Communications offers a wide range of Internet products to choose from depending on customer’s needs. Its Internet Direct Service is a dedicated Internet Service that runs on leased line technology providing customers with best route to content, via Eastern Communications’ multiple peering partners in the Philippines and abroad.
+							</div>
+						</div>
+						
+						<div id="prod-2" class="collapse">
+							<h3>Data Services</h3>
+							<div class="prod-desc">
+								<h4>DESCRIPTION</h4>
+								<p>Eastern Communications offers a wide range of Internet products to choose from depending on customer’s needs. Its Internet Direct Service is a dedicated Internet Service that runs on leased line technology providing customers with best route to content, via Eastern Communications’ multiple peering partners in the Philippines and abroad.
+							</div>
+						</div>
+						
+						<div id="prod-3" class="collapse">
+							<h3>Data Services</h3>
+							<div class="prod-desc">
+								<h4>DESCRIPTION</h4>
+								<p>Eastern Communications offers a wide range of Internet products to choose from depending on customer’s needs. Its Internet Direct Service is a dedicated Internet Service that runs on leased line technology providing customers with best route to content, via Eastern Communications’ multiple peering partners in the Philippines and abroad.
+							</div>
+						</div>
+						
+						<div id="prod-4" class="collapse">
+							<h3>Data Services</h3>
+							<div class="prod-desc">
+								<h4>DESCRIPTION</h4>
 								<p>Eastern Communications offers a wide range of Internet products to choose from depending on customer’s needs. Its Internet Direct Service is a dedicated Internet Service that runs on leased line technology providing customers with best route to content, via Eastern Communications’ multiple peering partners in the Philippines and abroad.
 							</div>
 						</div>
 					</div>
 				</div><!--/row-->
 			</div><!--/container-->
-			
 		</div><!--/products-->
 		
 		<div class="news">
 			<div class="page pull-left">
-				<div>MORESA</div>
-				<div>03</div>
-				<h2>NEWS</h2>
+				<div class="page-text">MORESA</div>
+				<div class="page-number">03</div>
+				<h2 class="page-desc">NEWS</h2>
 			</div>
 			
 			<div class="container">
@@ -140,75 +166,75 @@
 					</div>
 					<div class="col-md-6">
 						<div class="news-info">
-							<span>30 APRIL 2016</span><span>ADMIN</span>
+							<span class="news-date">30 APRIL 2016</span><span class="news-account">ADMIN</span>
 						</div>
 						<div class="news-body">
-							<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, vel, in</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ex. Quisquam porro nisi beatae ipsa provident assumenda blanditiis iusto, tenetur, saepe, repellat eaque tempore incidunt, sit aliquam voluptates accusantium nam.</p>
-							<a href="#">Read More</a>
+							<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, vel, in</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, ex. Quisquam porro nisi beatae ipsa provident assumenda blanditiis iusto.</p>
+							<a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>READ MORE</a>
 						</div>
 					</div>
 				</div><!--/row-->
 			</div><!--/container-->
 		</div><!--/news-->
 		
-		<div class="contact">
-			<div class="page pull-left">
-				<div>MORESA</div>
-				<div>04</div>
-				<h2>CONTACT</h2>
+		<div class="contact clearfix">
+			<div class="page">
+				<div class="page-text">MORESA</div>
+				<div class="page-number">04</div>
+				<h2 class="page-desc">CONTACT</h2>
+			</div>
+
+			<div class="contact-left">
+				<div class="contact-form-container">
+					<h3><span class="text-lg">Send Message</span></h3>
+
+					<!-- SEND MESSAGE FORM -->
+					<form name="" id="form-send-message">
+
+						<input type="text" class="form-control" placeholder="Your Name">
+
+						<input type="text" class="form-control" placeholder="Email">
+
+						<input type="text" class="form-control" placeholder="Subject">
+
+						<textarea rows="5" class="form-control" placeholder="Message"></textarea>
+
+						<button type="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>SUBMIT</button>
+					</form>
+				</div>	
+
 			</div>
 			
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<h3>Send Message</h3>
-						
-						<!-- SEND MESSAGE FORM -->
-						<form name="" id="form-send-message">
-						
-							<input type="text" class="form-control" placeholder="Your Name">
-							
-							<input type="text" class="form-control" placeholder="Email">
-							
-							<input type="text" class="form-control" placeholder="Subject">
-							
-							<textarea rows="10" class="form-control" placeholder="Message"></textarea>
-							
-							<button type="submit">SUBMIT</button>
-						</form>
-						
+			<div class="contact-right">
+
+				<div class="contact-info" style="background: linear-gradient( rgba(0,99,167,0.75), rgba(0,99,167,0.75)), url('images/contact-info-bg.jpg');">
+					<div>
+						<h4>LOCATION</h4>
+						<p>3638 StoneHill Lane, Victoria 3000 AUS</p>
 					</div>
-					
-					<div class="col-md-6">
-						<div>
-							<div>
-								<h4>Location</h4>
-								<p>3638 StoneHill Lane, Victoria 3000 AUS</p>
-							</div>
-							<div>
-								<h4>Email</h4>
-								<p>moresa.agency@domain.com</p>
-							</div>
-							<div>
-								<h4>Phone</h4>
-								<p>+&lpar;100&rpar; 234 567 8900</p>
-							</div>
-						</div>
-						<div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae adipisci, pariatur labore voluptate iusto ex distinctio! Nam, ea quae adipisci laboriosam tempore esse dolores animi dignissimos dolorem, sed corporis ipsa.</p>
-							<h4>CONNECT</h4>
-							<ul class="connect-list">
-								<li><a href="#">FACEBOOK</a></li>
-								<li><a href="#">TWITTER</a></li>
-								<li><a href="#">BEHANCE</a></li>
-								<li><a href="#">GOOGLE+</a></li>
-								<li><a href="#">PINTEREST</a></li>
-							</ul>
-						</div>
+					<div>
+						<h4>EMAIL</h4>
+						<p>moresa.agency@domain.com</p>
 					</div>
-				</div><!--/row-->
-			</div><!--/container-->
+					<div>
+						<h4>PHONE</h4>
+						<p>+&lpar;100&rpar; 234 567 8900</p>
+					</div>
+				</div>
+				
+				<div class="contact-social">
+					<h4>CONNECT</h4>
+					<ul>
+						<li><a href="#">FACEBOOK</a></li>
+						<li><a href="#">TWITTER</a></li>
+						<li><a href="#">BEHANCE</a></li>
+						<li><a href="#">GOOGLE+</a></li>
+						<li><a href="#">PINTEREST</a></li>
+					</ul>
+				</div>
+
+			</div>
 		</div><!--/contact-->
 	</main>
 	
@@ -220,5 +246,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script>
+		$('.prod-image a').click(function(e) {
+			e.preventDefault();
+		});
+	
+	</script>
+
 </body>
 </html>
