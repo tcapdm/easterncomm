@@ -44,18 +44,33 @@
 	});
 	
 	
-/**************** HERO SLIDER *****************/
+/**************** HERO SLIDER EVENTS *****************/
+	
 	$('.single-item').slick({
 		arrows: false,
 		autoplay: true,
-		autoplaySpeed: 2000
+		dots: true,
+		autoplaySpeed: 3000,
+		infinite: true
 	});
 	
+	window.setTimeout(function(){
+		$(".hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
+	}, 300);	
+	window.setTimeout(function(){
+		$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+	}, 300);
 	
 	
+	$('#hero-slider').on('beforeChange', function(event, slick, direction){
+		$(".hero-overlay, .hero-textbox").css({visibility: "hidden"}).removeClass("animated slideInRight fadeInLeft");
+	});
 	
-	
-	
+	$('#hero-slider').on('afterChange', function(event, slick, direction){
+		$(".slick-active .hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
+		$(".slick-active .hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+	});
+
 	
 	
 /**************** PRODUCT SELECTION EVENT *****************/
@@ -102,21 +117,6 @@
 		$("#prod-image-"+(activeProductIndex)).addClass('active');
 		activeProductId = "#prod-" + activeProductIndex.toString();
 		$(activeProductId).fadeIn();
-	});
-	
-/*********************** SERVICE AREAS SELECTION SCRIPTS / GOOGLE MAP ********************/
-
-	$('.area-thumbnail').click(function(e) {
-		e.preventDefault();
-		$('.area-thumbnail').removeClass('active');
-		var activeArea = $(this).children('a').attr('data-target');
-		$('.service-area-container > div').hide();
-		$(activeArea).fadeIn();
-		
-		/************ CHANGE MARKER POSITION ****************/
-		activeLocation = parseInt(activeArea[6])-1;
-		marker.setPosition(locations[activeLocation]);
-		map.setCenter(marker.getPosition());
 	});
 
 
