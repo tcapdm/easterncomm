@@ -43,6 +43,19 @@
 		didScroll = true;
 	});
 	
+/**************** NAVBAR COLOR ************************/
+
+   $(document).scroll(function () {
+
+	   var scrollPosition = $(window).scrollTop();
+	   var elementPosition = $(".hero").height()/2;
+	   if(scrollPosition > elementPosition) {
+		   $(".navbar").css({background: "#222"});
+		} else {
+		   $('.navbar').css({background: "none"});
+	   	}
+	});
+
 	
 /**************** HERO SLIDER EVENTS *****************/
 	
@@ -51,24 +64,50 @@
 		autoplay: true,
 		dots: true,
 		autoplaySpeed: 3000,
-		infinite: true
+		infinite: true,
+		
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					swipeToSlide: true
+				}
+			}
+		]
 	});
-	
-	window.setTimeout(function(){
-		$(".hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
-	}, 300);	
-	window.setTimeout(function(){
-		$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
-	}, 300);
-	
+
+	$('#hero-slider').ready( function(event, slick, direction){
+		if($(window).width() > 993) {
+			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+			$(".hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
+		} else {
+			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+			$(".hero-overlay").css({visibility: "hidden"});
+		}
+	});
+
 	
 	$('#hero-slider').on('beforeChange', function(event, slick, direction){
-		$(".hero-overlay, .hero-textbox").css({visibility: "hidden"}).removeClass("animated slideInRight fadeInLeft");
+		$(".hero-textbox").css({visibility: "hidden"}).removeClass("animated fadeInLeft");
+		$(".hero-overlay").css({visibility: "hidden"}).removeClass("animated slideInRight");
+	});
+	
+	$(window).resize(function () {
+		if($(this).width() <= 993) {
+			$(".hero-overlay").css({visibility: "hidden"});
+		} else {
+			$(".hero-overlay").css({visibility: "visible"});
+		}
 	});
 	
 	$('#hero-slider').on('afterChange', function(event, slick, direction){
-		$(".slick-active .hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
-		$(".slick-active .hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+		if($(window).width() > 993) {
+			$(".slick-active .hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+			$(".slick-active .hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
+		} else {
+			$(".slick-active .hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
+			$(".slick-active .hero-overlay").css({visibility: "hidden"});
+		}
 	});
 
 	

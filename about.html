@@ -13,39 +13,21 @@
         <link rel="shortcut icon" href="images/fav_icon.png" type="image/png" />
     </head>
     <body>
-
         <header>
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <div class="logo pull-left">
-                            <a href="#"><img src="images/eastern_logo.png" alt=""></a>
-                        </div>
-                    </div>
-
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-right nav-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="#">Products &amp; Services</a></li>
-                            <li><a href="services.html">Service Areas</a></li>
-                            <li><a href="news.html">News</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div>
+                    <a href="#"><img src="images/eastern_logo.png" alt=""></a>
+                </div>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Products &amp; Services</a>
+                <a href="#">Service Areas</a>
+                <a href="#">News</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact Us</a>
+            </div>
         </header>
-
         <main>
             <div class="lead_header" style="background: url('images/lead_about_bg.png');">
                 <div class="row">
@@ -181,11 +163,40 @@
                 </div>
             </div>
         </footer>
-
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/script.js"></script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+                document.body.style.backgroundColor = "white";
+            }
+        </script>
+        <script>
+            function windowSize() {
+                windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+                windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
+
+            }
+
+            //Init Function of init it wherever you like...
+            windowSize();
+
+            // For example, get window size on window resize
+            $(window).resize(function() {
+                if (windowWidth < 768) {
+                    $('#mySidenav').css('background', '#c0c0c0');
+                }
+            });
+        </script>
     </body>
 </html>

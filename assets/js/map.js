@@ -44,7 +44,6 @@
 
 		/************ CHANGE MARKER POSITION ****************/
 		activeLocation = parseInt(activeArea[6])-1;
-		console.log(locations[activeLocation][0]);
 		marker.setPosition(locations[activeLocation][0]);
 		map.setCenter(marker.getPosition());
 		infowindow.setContent(locations[activeLocation][1]);
