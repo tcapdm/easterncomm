@@ -834,6 +834,7 @@ footer a:link,footer a:visited {
 .news-container > .row{
 	margin-right: 0;
     margin-top: 5em;
+    margin-left: 0;
 }
 .news-item-date {
     margin-top: 3em;
@@ -911,6 +912,10 @@ footer a:link,footer a:visited {
 .filter-news {
     position: absolute;
     right: 0;
+}
+.filter-news select{
+	display: inline-block;
+    width: 300px;
 }
 .news-pagination{
     font-size: 0.9em;
@@ -1102,6 +1107,10 @@ footer a:link,footer a:visited {
         border-left: none;
         border-right: none;
         border-top: none;
+    }
+    .filter-news select{
+        display: flex;
+        width: auto;
     }
 }
 
