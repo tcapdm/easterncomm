@@ -11,35 +11,33 @@
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
 	<link rel="shortcut icon" href="images/fav_icon.png" type="image/png" />
-	<link rel="stylesheet" href="assets/css/contact-style.css" /> </head>
+	<link rel="stylesheet" href="assets/css/contact-style.css" /> 
+    </head>
 
 <body>
-	<header>
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-					<div class="logo pull-left">
-						<a href="#"><img src="images/eastern_logo.png" alt=""></a>
-					</div>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="navbar-right nav-links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="#">Products &amp; Services</a></li>
-						<li><a href="services.html">Service Areas</a></li>
-						<li><a href="news.html">News</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-	</header>
-	<main>
+    <header id="header">
+        <div class="main-menu-bar">
+            <span id="openNav"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></span>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="images/eastern_logo.png" alt=""></a>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <div class="sidenav-content">
+                <a href="#" class="closebtn" id="closeNav">&times;</a>
+                <div class="main-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="#">Products &amp; Services</a>
+                    <a href="services.html">Service Areas</a>
+                    <a href="news.html">News</a>
+                    <a href="">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+	<main id="main">
 		<div class="lead_news contact">
 			<div class="row">
 				<div class="col-md-6">
@@ -308,6 +306,7 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/js/script.js"></script>
+    <script src="assets/vendor/slick/slick.min.js"></script>
 	<script src="assets/js/contact.js"></script>
 </body>
 

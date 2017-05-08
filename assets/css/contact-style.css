@@ -58,7 +58,7 @@ a:link, a:visited {
 /**** .container override for larger screens ****/
 @media screen and (min-width: 1200px) {
     .container {
-        width: 60%;
+        width: 70%;
     }
 }
 
@@ -73,7 +73,9 @@ a:link, a:visited {
     border: none;
 }
 .logo {
-    width: 300px;
+    float: left;
+    padding: 20px 0 0 20px;
+    width: 220px;
 }
 .logo img{
     width: 100%;
@@ -98,7 +100,11 @@ a:link, a:visited {
     color: #fff;
     border-bottom: 2px solid #fff;
 }
-
+@media screen and (max-width: 992px) {
+    .logo {
+        max-width: 150px;
+    }
+}
 
 /*----- MAIN STYLES -----*/
 
@@ -818,7 +824,7 @@ footer a:link,footer a:visited {
 
 /*Contact tab*/
 
-.contact{background: url(../../images/contact_bg.jpg);}
+.contact{background: url(../../images/contact-info-bg.jpg);}
 .contact-content .tab-content .tab-pane{padding: 15px;}
 .contact-content .nav-tabs{border: none;text-transform: uppercase;font-weight: bold;}
 .contact-content .nav-tabs>li>a{border: none;background-size: 0 2px;-webkit-transition: background-size ease .45s;transition: background-size ease .45s;color: #1a1a1a;}
@@ -939,3 +945,116 @@ footer a:link,footer a:visited {
   96.666667% { -webkit-transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00056, 0, 0, 0, 0, 1.00056, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);} 
 }
+/*** W3C Offcanvas Navigation***/
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    padding-bottom: 20px;
+    transition: background-color 200ms linear;
+}
+#main{
+    background-color: #fff;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+.sidenav img {
+    float: left;
+    margin-left: 2em;
+}
+.main-menu-bar {
+    display: none;
+}
+.main-nav {
+    list-style: none;
+    float: right;
+    margin: 40px 20px 0 0;
+}
+.main-nav a{
+    display: inline;
+    margin-left: 25px;
+}
+.main-nav a:link, .main-nav a:visited {
+    position: relative;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: .9em;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+.main-nav a:hover, .main-nav a:active{
+    text-decoration: none;
+    color: #fff;
+}
+.main-nav a:hover:before{
+    content: "_";
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: -35px;
+}
+.sidenav a{
+    color: #fff;
+    text-transform: uppercase;
+}
+.sidenav .closebtn{
+    visibility: hidden;
+}
+@media screen and (max-width: 1100px) {
+    .main-menu-bar {
+        position: fixed;
+        display: block;
+        right: 0;
+        margin: 1em;
+        color: #fff;
+        z-index: 998;
+        background-color: #222;
+        padding: 5px 10px 2px 10px;
+    }
+    .sidenav {
+        height: 100%;
+        width: 230px;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        right: -250px;
+        background-color: #222;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 4em;
+        visibility: visible;
+        display: block;
+    }
+    .sidenav-content a {
+        padding: 8px 8px 23px 0;
+        text-decoration: none;
+        font-size: 16px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+    }
+    .main-nav {
+        float: none;
+        margin: 0px 0px 0 0;
+    }
+    .main-nav a:hover:before{
+        content: "_";
+        font-size: 2em;
+        font-weight: bold;
+        position: absolute;
+        top: -22px;
+    }
+    .sidenav-content a:hover, .offcanvas a:focus{
+        color: #f1f1f1;
+    }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        font-size: 36px;
+        margin-left: 50px;
+        visibility: visible;
+    }
+}
+/*** End Here ***/

@@ -13,22 +13,29 @@
         <link rel="shortcut icon" href="images/fav_icon.png" type="image/png" />
     </head>
     <body>
-        <header>
+        <header id="header">
+            <div class="main-menu-bar">
+                <span id="openNav"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></span>
+            </div>
+            <div class="logo">
+                <a href="#"><img src="images/eastern_logo.png" alt=""></a>
+            </div>
             <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div>
-                    <a href="#"><img src="images/eastern_logo.png" alt=""></a>
-                </div>
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
+                <div class="sidenav-content">
+                <a href="#" class="closebtn" id="closeNav">&times;</a>
+                <div class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
                 <a href="#">Products &amp; Services</a>
-                <a href="#">Service Areas</a>
-                <a href="#">News</a>
-                <a href="#">Careers</a>
-                <a href="#">Contact Us</a>
+                <a href="services.html">Service Areas</a>
+                <a href="news.html">News</a>
+                <a href="">Careers</a>
+                <a href="contact.html">Contact Us</a>
+                </div>
+                </div>
             </div>
         </header>
-        <main>
+        <main id="main">
             <div class="lead_header" style="background: url('images/lead_about_bg.png');">
                 <div class="row">
                     <div class="col-md-6">
@@ -168,35 +175,6 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/script.js"></script>
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft= "0";
-                document.body.style.backgroundColor = "white";
-            }
-        </script>
-        <script>
-            function windowSize() {
-                windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
-                windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-
-            }
-
-            //Init Function of init it wherever you like...
-            windowSize();
-
-            // For example, get window size on window resize
-            $(window).resize(function() {
-                if (windowWidth < 768) {
-                    $('#mySidenav').css('background', '#c0c0c0');
-                }
-            });
-        </script>
+        <script src="assets/vendor/slick/slick.min.js"></script>
     </body>
 </html>
