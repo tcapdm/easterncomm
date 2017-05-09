@@ -57,22 +57,23 @@
     
 /**************** SIDENAV TOGGLE ************************/
     $('#openNav').click(function(){
-        $("#mySidenav").css({right:  "0"});
-        $("#main").css({marginLeft: "-250px"});
+        $("#mySidenav").animate({right:  "0"});
+        $("body").animate({left: "-230px"});
         $('#main, footer').css({opacity: '0.5'});
         $('#header').css({background: 'none'});
     });
 
-    $('#closeNav').click(function(){
-        $("#mySidenav").css({right: "-250px"});
-        $("main").css({marginLeft: "0"});
+    $('#closeNav').click(function(e){
+		e.preventDefault();
+        $("#mySidenav").animate({right: "-230px"});
+        $("body").animate({left: "0"});
         $('#main, footer').css({opacity: '1'});
         $('#header').css({background: ''});
     });
 
     $('#main,footer').click(function(){
-        $("#mySidenav").css({right: "-250px"});
-        $("main").css({marginLeft: "0"});
+        $("#mySidenav").animate({right: "-230px"});
+        $("body").animate({left: "0"});
         $('#main, footer').css({opacity: '1'});
     });
 	
@@ -87,46 +88,44 @@
             dots: true,
             autoplaySpeed: 3000,
             infinite: true,
+			swipeToSlide: true
 
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        swipeToSlide: true
-                    }
-                }
-            ]
         });
 		if($(window).width() > 993) {
 			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
 			$(".hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
 		} else {
-			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
-			$(".hero-overlay").css({visibility: "hidden"});
+			$(".hero-textbox").css({visibility: "visible"});
 		}
 	});
 
 	
-	$('#hero-slider').on('beforeChange', function(event, slick, direction){
-		$(".hero-textbox").css({visibility: "hidden"}).removeClass("animated fadeInLeft");
-		$(".hero-overlay").css({visibility: "hidden"}).removeClass("animated slideInRight");
+	$('.slick-slider').on('beforeChange', function(event, slick, direction){
+
+		if($(window).width() > 993) {
+			$(".hero-textbox").css({visibility: "hidden"}).removeClass("animated fadeInLeft");
+			$(".hero-overlay").css({visibility: "hidden"}).removeClass("animated slideInRight");
+		} else {
+			$(".hero-textbox").css({visibility: "hidden"}).removeClass("animated fadeInLeft");
+		}
 	});
 	
 	$(window).resize(function () {
 		if($(this).width() <= 993) {
-			$(".hero-overlay").css({visibility: "hidden"});
-		} else {
+			$(".hero-overlay").removeClass("animated slideInRight");
 			$(".hero-overlay").css({visibility: "visible"});
+
+		} else {
+			$(".hero-overlay").addClass("animated slideInRight");
 		}
 	});
 	
-	$('#hero-slider').on('afterChange', function(event, slick, direction){
+	$('.slick-slider').on('afterChange', function(event, slick, direction){
 		if($(window).width() > 993) {
 			$(".slick-active .hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
 			$(".slick-active .hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
 		} else {
 			$(".slick-active .hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
-			$(".slick-active .hero-overlay").css({visibility: "hidden"});
 		}
 	});
 
@@ -145,6 +144,11 @@
 		activeProductId = $(this).find('a').attr('data-target');
 		$(activeProductId).fadeIn();
 		activeProductIndex = parseInt(activeProductId[6]);
+		if($(window).width() <= 993) {
+			$('html, body').animate({
+				scrollTop: $(".prod-col-right").offset().top
+			}, 500);
+		}
 	});
 	
 	$("#prod-prev").click(function(e) {
@@ -177,6 +181,34 @@
 		activeProductId = "#prod-" + activeProductIndex.toString();
 		$(activeProductId).fadeIn();
 	});
+	
+	/**************************** FOOTER SITEMAP TOGGLE *******/
+	var sitemapShow = false;
+	$("#sitemap-toggle").click(function(e) {
+		e.preventDefault();
+		if(!sitemapShow) {
+			$("#sitemap-toggle, #sitemap-bg").animate({
+				top: "-180px"
+			}, 100);
+			$("#sitemap-links").stop().animate({
+				top: "-150px"
+			}, 100);
+			$("#sitemap-toggle i").removeClass("fa-chevron-up");
+			$("#sitemap-toggle i").addClass("fa-chevron-down");
+			sitemapShow = true;
+		}else {
+			$("#sitemap-toggle, #sitemap-bg").animate({
+				top: "-30px"
+			}, 100);
+			$("#sitemap-links").stop().animate({
+				top: "0"
+			}, 100);
+			$("#sitemap-toggle i").removeClass("fa-chevron-down");
+			$("#sitemap-toggle i").addClass("fa-chevron-up");
+			sitemapShow = false;
+		}
+	});
+	
 
 })(jQuery, window, document);
 
