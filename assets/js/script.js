@@ -208,20 +208,20 @@ $("#preloader").ready(function() {
 	$("#sitemap-toggle").click(function(e) {
 		e.preventDefault();
 		if(!sitemapShow) {
-			$("#sitemap-toggle, #sitemap-bg").animate({
-				top: "-180px"
+			$("#sitemap-toggle, #sitemap-bg").css({
+				top: "-200px"
 			}, 100);
-			$("#sitemap-links").stop().animate({
-				top: "-150px"
+			$("#sitemap-links").css({
+				top: "-170px"
 			}, 100);
 			$("#sitemap-toggle i").removeClass("fa-chevron-up");
 			$("#sitemap-toggle i").addClass("fa-chevron-down");
 			sitemapShow = true;
 		}else {
-			$("#sitemap-toggle, #sitemap-bg").animate({
+			$("#sitemap-toggle, #sitemap-bg").css({
 				top: "-30px"
 			}, 100);
-			$("#sitemap-links").stop().animate({
+			$("#sitemap-links").css({
 				top: "0"
 			}, 100);
 			$("#sitemap-toggle i").removeClass("fa-chevron-down");
