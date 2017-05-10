@@ -1,23 +1,10 @@
 ;(function($, window, document, undefined) {
 	
-	
-	/************* PRELOADER FUNCTIONS ****************/
-	
-	$("#preloader").ready(function() {
-		$("#preloader .single-item").slick({
-			arrows: false,
-			autoplay: true,
-			dots: false,
-			autoplaySpeed: 2000,
-			fade: true,
-			infinite: true,
-			swipeToSlide: false
-		});
-		$(window).on('load', function() {
-			$("#preloader").fadeOut();
-		});
-			
+
+	$(window).on('load', function() {
+		$("#preloader").fadeOut();
 	});
+			
 	
 /************** NAVBAR HIDE ON SCROLL **********/
 	
