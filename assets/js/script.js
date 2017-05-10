@@ -17,15 +17,7 @@ $("#preloader").ready(function() {
 	/************* PRELOADER FUNCTIONS ****************/
 	$(window).on('load', function() {
 		$("#preloader").fadeOut();
-		$('.hero .single-item').slick({
-			arrows: false,
-			autoplay: true,
-			dots: true,
-			autoplaySpeed: 3000,
-			infinite: true,
-			swipeToSlide: true
-
-		});
+		$('.hero .single-item').slick('slickGoTo', '0');
 	});
 			
 	
@@ -111,8 +103,12 @@ $("#preloader").ready(function() {
 	$('.hero').ready( function(){
 		$('.hero .single-item').slick({
 			arrows: false,
-			autoplay: false,
-			dots: true
+			autoplay: true,
+			dots: true,
+			autoplaySpeed: 3000,
+			infinite: true,
+			swipeToSlide: true
+
 		});
 		if($(window).width() > 993) {
 			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
