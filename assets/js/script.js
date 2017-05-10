@@ -18,6 +18,7 @@ $("#preloader").ready(function() {
 	$(window).on('load', function() {
 		$("#preloader").fadeOut();
 		$('.hero .single-item').slick('slickGoTo', '0');
+		$('.hero .single-item').slick('slickPlay');
 	});
 			
 	
@@ -103,7 +104,7 @@ $("#preloader").ready(function() {
 	$('.hero').ready( function(){
 		$('.hero .single-item').slick({
 			arrows: false,
-			autoplay: true,
+			autoplay: false,
 			dots: true,
 			autoplaySpeed: 3000,
 			infinite: true,
