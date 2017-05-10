@@ -286,6 +286,10 @@ a:link, a:visited {
 	width: 400px;
 }
 
+.preloader-slide:not(.active) {
+	display: none;
+}
+
 .preloader-slide img {
 	width: 100%;
 }

@@ -1,11 +1,14 @@
-$("#preloader .single-item").slick({
-	arrows: false,
-	autoplay: true,
-	dots: false,
-	autoplaySpeed: 2000,
-	fade: true,
-	infinite: true,
-	swipeToSlide: false
+$("#preloader").ready(function() {
+	$(".preloader-slide").show();
+	$("#preloader .single-item").slick({
+		arrows: false,
+		autoplay: true,
+		dots: false,
+		autoplaySpeed: 2000,
+		fade: true,
+		infinite: true,
+		swipeToSlide: false
+	});
 });
 
 ;(function($, window, document, undefined) {
