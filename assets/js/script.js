@@ -17,7 +17,6 @@ $("#preloader").ready(function() {
 	/************* PRELOADER FUNCTIONS ****************/
 	$(window).on('load', function() {
 		$("#preloader").fadeOut();
-		$('.hero .single-item').slick('unslick');
 		$('.hero .single-item').slick({
 			arrows: false,
 			autoplay: true,
@@ -112,12 +111,8 @@ $("#preloader").ready(function() {
 	$('.hero').ready( function(){
 		$('.hero .single-item').slick({
 			arrows: false,
-			autoplay: true,
-			dots: true,
-			autoplaySpeed: 3000,
-			infinite: true,
-			swipeToSlide: true
-
+			autoplay: false,
+			dots: true
 		});
 		if($(window).width() > 993) {
 			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
