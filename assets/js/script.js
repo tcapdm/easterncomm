@@ -17,6 +17,15 @@ $("#preloader .single-item").slick({
 
 	$(window).on('load', function() {
 		$("#preloader").fadeOut();
+		$('.hero .single-item').slick({
+			arrows: false,
+			autoplay: true,
+			dots: true,
+			autoplaySpeed: 3000,
+			infinite: true,
+			swipeToSlide: true
+
+		});
 	});
 			
 	
@@ -100,15 +109,7 @@ $("#preloader .single-item").slick({
 /**************** HERO SLIDER EVENTS *****************/
 
 	$('.hero').ready( function(){
-        $('.hero .single-item').slick({
-            arrows: false,
-            autoplay: true,
-            dots: true,
-            autoplaySpeed: 3000,
-            infinite: true,
-			swipeToSlide: true
-
-        });
+       
 		if($(window).width() > 993) {
 			$(".hero-textbox").css({visibility: "visible"}).addClass("animated fadeInLeft");
 			$(".hero-overlay").css({visibility: "visible"}).addClass("animated slideInRight");
