@@ -214,6 +214,9 @@ $("#preloader").ready(function() {
 			$("#sitemap-links").css({
 				top: "-170px"
 			}, 100);
+            $("#sitemap-links a").css({
+                visibility: "visible"
+            });
 			$("#sitemap-toggle i").removeClass("fa-chevron-up");
 			$("#sitemap-toggle i").addClass("fa-chevron-down");
 			sitemapShow = true;
@@ -224,6 +227,9 @@ $("#preloader").ready(function() {
 			$("#sitemap-links").css({
 				top: "0"
 			}, 100);
+            $("#sitemap-links a").css({
+                visibility: "hidden"
+            });
 			$("#sitemap-toggle i").removeClass("fa-chevron-down");
 			$("#sitemap-toggle i").addClass("fa-chevron-up");
 			sitemapShow = false;
