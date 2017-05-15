@@ -71,7 +71,7 @@ a:link, a:visited {
 /**** .container overrides ****/
 @media screen and (min-width: 1200px) {
     .container {
-        width: 60%;
+        width: 70%;
     }
 }
 
@@ -102,11 +102,11 @@ a:link, a:visited {
 }
 .main-nav a{
     display: inline;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .main-nav a:link, .main-nav a:visited {
     position: relative;
-    color: rgba(36,87,157,1);
+    color: rgba(255,255,255,1);
     font-size: 1em;
     padding-bottom: 5px;
     text-transform: uppercase;
@@ -117,7 +117,7 @@ a:link, a:visited {
 }
 .main-nav a:hover:before{
     content: "";
-    border-top: 2px solid rgba(36,87,157,1);
+    border-top: 2px solid rgba(255,255,255,1);
     width: 15px;
     font-size: 2em;
     font-weight: bold;
@@ -129,7 +129,7 @@ a:link, a:visited {
 }
 .main-nav a.active-link:before {
     content: "";
-    border-top: 2px solid rgba(36,87,157,1);
+    border-top: 2px solid rgba(255,255,255,1);
     width: 15px;
     font-size: 2em;
     font-weight: bold;
@@ -148,7 +148,7 @@ a:link, a:visited {
 }
 
 .sidenav a{
-    color: rgba(36,87,157,1);
+    color: rgba(255,255,255,1);
     text-transform: uppercase;
 }
 .sidenav .closebtn{
@@ -526,7 +526,6 @@ a:link, a:visited {
     margin: 0;
     text-align: right;
     color: #24579d;
-    font-weight:bold;
     line-height: 0.9;
 }
 @media screen and (max-width: 1200px) {
@@ -814,11 +813,11 @@ a:link, a:visited {
 /*In active state ming effect*/
 .prod-image.active figcaption::before{
     position: absolute;
-    top: 20px;
-    right: 20px;
-    bottom: 20px;
-    left: 20px;
-    border: 2px solid #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
     box-shadow: 0 0 0 30px rgba(255,255,255,0.2);
     content: '';
     opacity: 1;
@@ -1049,16 +1048,23 @@ footer img {
 }
 footer h4 {
     margin-top: 0;
-    font-weight: bold;
+    font-size: 130%;
 }
 footer ul {
     list-style-type: none;
     padding: 0;
 }
-footer p, footer li{
+footer p,footer li{
     color: #fff;
-    font-size: 0.9em;
+    font-size: 1em;
     margin: 0;
+}
+footer .col-center p{
+    color: #fff;
+    font-size: 0.8em;
+}
+#sitemap-links{
+	font-size: 1em;
 }
 footer a:link,footer a:visited {
     color: #fff;
@@ -1170,7 +1176,7 @@ footer a:link,footer a:visited {
     position: absolute;
     bottom:0;
     background: #fff;
-    height: 20px;
+    height: 10px;
 }
 .lead-overlay {
     height: 100vh;
@@ -1190,31 +1196,33 @@ footer a:link,footer a:visited {
     background-color: rgba(255, 255, 255, 0.7);
 }
 .lead-title {
-	margin-right: 5em;
-    margin-top: 13em;
+	margin-right: 2em;
+    margin-top: 10em;
     color: #000;
     text-align: right;
     float: right;
     text-transform: uppercase;
 }
+.lead-title span{
+	line-height: 1px;
+    font-size: 125%;
+    color: #222;
+}
 ol.breadcrumb{
 	margin-right: 0;
 }
 .breadcrumb>li {
-    color: rgba(0, 0, 0, 1);
+    color: rgba(34,34,34, 1);
     text-transform: uppercase;
+    font-weight:400;
+    font-size: 105%;
 }
 .breadcrumb>li+li:before {
-    color: rgba(0, 0, 0, 1); 
+    color: rgba(34, 34, 34, 1); 
     content: "\002F\00a0";
 }
 .breadcrumb {
 	background-color: transparent;
-}
-.breadcrumb > li{
-    color: #000;
-    font-weight:600;
-    font-size: 90%;
 }
 .news-container {
     margin-bottom: 3em;
@@ -1669,23 +1677,40 @@ ol.breadcrumb{
 	text-transform: uppercase;
     font-size: 150%;
     font-weight: bold;
+    line-height: 0px;
 }
 .about-sec-01 h2{
     font-weight: bold;
-    color: #0162a6;
+    color: #2f9c32;
+}
+.about-sec-01 img{
+    float: right;
+    padding: 1em;
 }
 .about-sec-02 h3{
 	font-weight: bold;
-    color: #0162a6;
+    color: #2f9c32;
+}
+.about-sec-02 h3:before{
+    content: "";
+    border-top: 1px solid rgba(47,156,50,1);
+    width: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    animation-name: navhover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 .about-sec-04 {
     margin-top: 3em;
-    margin-bottom: 5em;
+    margin-bottom: 7em;
     margin-right: 0;
 }
 .about-sec-04 h3{
     font-weight: bold;
-    color: #0162a6;
+    color: #2f9c32;
 }
 .about-sec-03 {
     margin-top: 3em;
@@ -1693,6 +1718,7 @@ ol.breadcrumb{
 .partnership-sec {
 	width: 60%;
     float: right;
+    padding-right: 2em;
 }
 .partnership-sec h2, .partnership-sec p{
 	color: #fff;
@@ -1710,6 +1736,15 @@ ol.breadcrumb{
 div.row.about-sec-02{
     margin: 0;
 }
+@media screen and (max-width: 993px){
+    .about-sec-01 img{
+        float: none;
+        padding: 1em;
+    }
+    .about-sec-01 {
+        margin: 1.5em 0 3em 0;
+    }
+}
 /*About Partnership*/
 .box-area {
     display: table;
@@ -1724,12 +1759,16 @@ div.row.about-sec-02{
 }
 .box2 {
     background: #fff;
+    border: 2px solid #000;
 }
 @media (max-width: 720px) {
     .box {
-        display: block;
+        display: inline-block;
         width: 100%;
         text-align: center;
+    }
+    .box2 {
+	    border: none;
     }
     .box-area {
 	   display: block;
@@ -1737,6 +1776,12 @@ div.row.about-sec-02{
     .partnership-sec {
         width: 100%;
         float: none;
+    }
+    .partnership-img {
+	    padding-top: 2em;
+    }
+    .partnership-img img {
+	    margin:auto;
     }
 }
 
@@ -2630,7 +2675,9 @@ footer .container {position: relative;}
 .contact-btn p span {font-style:italic;font-weight:bold;}
 .contact-btn p, .contact-btn {
 	text-align: right;
-    margin-left: 2em;
+}
+.contact-btn p{
+	margin-left: 2em;
 }
 div.contact-btn.clearfix a{
 	padding: 10px 30px;

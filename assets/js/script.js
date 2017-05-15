@@ -76,7 +76,7 @@ $("#preloader").ready(function() {
            $(".main-nav a:hover").css({color: "rgba(36,87,157,1)"});
 		} else {
 		   $('#header').css({background: "none"});
-            $(".main-nav a").css({color: "rgba(36,87,157,1)"});
+            $(".main-nav a").css({color: "rgba(255,255,255,1)"});
             $(".main-nav a:hover").css({color: "#fff"});
 	   	}
 	});
