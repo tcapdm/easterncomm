@@ -1744,7 +1744,20 @@ div.row.about-sec-02{
     .about-sec-01 {
         margin: 1.5em 0 3em 0;
     }
+    .about-sec-02 h3:before{
+        content: "";
+        border-top: 1px solid rgba(47,156,50,1);
+        width: 15px;
+        font-size: 2em;
+        font-weight: bold;
+        position: absolute;
+        top: -3px;
+        animation-name: navhover;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
 }
+
 /*About Partnership*/
 .box-area {
     display: table;
@@ -2660,17 +2673,6 @@ a.animated-button.thar-three {
 }
 footer .container {position: relative;}
 .contact-btn {background:#2f9c32;padding:1em 1em;position: absolute;bottom: 100%;left: 0;right: 0;text-transform:uppercase;text-align: center;}
-.contact-btn:after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 5px;
-    margin-left: -5px;
-    width: 0;
-    height: 0;
-    border-top: 30px solid #2f9c32;
-    border-right: 30px solid transparent;
-}
 .contact-btn p {margin: 0;padding: 0;text-transform:uppercase;font-size:17px;letter-spacing:1px;}
 .contact-btn p span {font-style:italic;font-weight:bold;}
 .contact-btn p, .contact-btn {
@@ -2680,7 +2682,7 @@ footer .container {position: relative;}
 	margin-left: 2em;
 }
 div.contact-btn.clearfix a{
-	padding: 10px 30px;
+	padding: 5px 10px;
     border-radius: 3px;
     margin-top: 20px;
     background-color: #fff;
@@ -2695,5 +2697,16 @@ div.contact-btn.clearfix a{
         margin-top: 20px;
         background-color: #fff;
         color: #2f9c32;
+    }
+    .contact-btn:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 5px;
+        margin-left: -5px;
+        width: 0;
+        height: 0;
+        border-top: 30px solid #2f9c32;
+        border-right: 30px solid transparent;
     }
 }
