@@ -71,9 +71,13 @@ $("#preloader").ready(function() {
 
 	   var scrollPosition = $(window).scrollTop();
 	   if(scrollPosition > 100) {
-		   $("#header").css({background: "#222"});
+           $("#header").css({background: "rgba(255,255,255,0.7)"});
+           $(".main-nav a").css({color: "rgba(36,87,157,1)"});
+           $(".main-nav a:hover").css({color: "rgba(36,87,157,1)"});
 		} else {
 		   $('#header').css({background: "none"});
+            $(".main-nav a").css({color: "rgba(36,87,157,1)"});
+            $(".main-nav a:hover").css({color: "#fff"});
 	   	}
 	});
     
