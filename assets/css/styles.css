@@ -86,6 +86,7 @@ a:link, a:visited {
     background-image: url("../../images/header.png");
     background-repeat:no-repeat;
     background-size: 100% 100%;
+    background-position: left -30px;
     height: 150px;
 }
 #main{
@@ -103,7 +104,7 @@ a:link, a:visited {
 .main-nav {
     list-style: none;
     float: right;
-    margin: 40px 40px 0 0;
+    margin: 30px 40px 0 0;
 }
 .main-nav a{
     display: inline;
@@ -231,6 +232,19 @@ a:link, a:visited {
         visibility: visible;
         border: none;
     }
+    #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        padding-bottom: 20px;
+        transition: background-color 200ms linear;
+        background-image: url("../../images/header.png");
+        background-repeat:no-repeat;
+        background-size: 200% 100%;
+        background-position: 90% -20%;
+        height: 70px;
+    }
 }
 /*** End Here ***/
 
@@ -271,7 +285,7 @@ a:link, a:visited {
 }
 .logo {
     float: left;
-    padding: 65px 0 0 20px;
+    padding: 35px 0 0 20px;
     width: 300px;
 }
 .index-logo {
@@ -288,6 +302,7 @@ a:link, a:visited {
 @media screen and (max-width: 992px) {
     .logo {
         max-width: 200px;
+        padding: 15px 0 0 20px;
     }
 }
 
@@ -402,7 +417,7 @@ a:link, a:visited {
     content: "";
     width: 20px;
     height: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -536,7 +551,7 @@ a:link, a:visited {
     position: absolute;
     left: 0;
     border-bottom: 1px solid #000;
-    width: 15%;
+    width: 14%;
 }
 @media screen and (max-width: 1200px) {
     .page {
@@ -584,7 +599,7 @@ a:link, a:visited {
     padding:40px 0;
 }
 .about {
-    padding: 100px 0;
+    padding: 50px 0 50px 0;
     position: relative;
 }
 @media screen and (max-width: 993px) {
@@ -603,9 +618,6 @@ a:link, a:visited {
         text-align:left;
 
     }
-}
-.about .page {
-    top: 100px;
 }
 .about-text p {
     margin-top: 25px;
@@ -726,7 +738,7 @@ a:link, a:visited {
     float: left;
     box-sizing: border-box;
     padding-right: 20px;
-    opacity: 0.5;
+    opacity: 1;
 }
 .prod-image:hover {
     opacity: 1;
@@ -766,7 +778,7 @@ a:link, a:visited {
     position: relative;
     display: block;
     width: 100%;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 .grid figure figcaption {
     color: #fff;
@@ -805,7 +817,7 @@ a:link, a:visited {
 }
 
 .grid figure h3 {
-    opacity: 0;
+    opacity: 1;
     font-size: 1em;
     word-spacing: -0.15em;
     font-weight: bold;
@@ -821,7 +833,7 @@ a:link, a:visited {
     color: #fff;
     font-size: .5em;
     letter-spacing: 1px;
-
+    opacity: 1;
 }
 
 .effect-ming {
@@ -948,7 +960,7 @@ a:link, a:visited {
     letter-spacing: 1.5px;
 }
 .news {
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
     position: relative;
 }
 @media screen and (max-width: 993px) {
@@ -986,7 +998,7 @@ a:link, a:visited {
     margin-right: 10px;
 }
 .service-area {
-    padding: 100px 0;
+    padding: 50px 0;
     position: relative;
 }
 @media screen and (max-width: 993px) {
