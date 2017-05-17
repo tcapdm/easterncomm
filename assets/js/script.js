@@ -30,7 +30,6 @@ $("#preloader").ready(function() {
         winWidth = $window.innerWidth(),
         winHeight = $window.innerHeight(),
         hh = $('#header').innerHeight();
-
     var didScroll;
     var lastScrollTop = 0;
     var delta = 0;
@@ -68,17 +67,15 @@ $("#preloader").ready(function() {
     /**************** NAVBAR COLOR ************************/
 
     $(document).scroll(function () {
-
         var scrollPosition = $(window).scrollTop();
         if(scrollPosition > 100) {
             $('#header').attr('style',  'background-image:url("../../images/header.png")');
-            $('#header').attr('style',  'height:150px');
-            $(".main-nav a").css({color: "rgba(36,87,157,1)"});
-            $(".main-nav a:hover").css({color: "rgba(36,87,157,1)"});
+            $('#header').attr('style',  'height:' + hh);
+            $(".main-nav a:hover").css({color: "rgba(255,255,255,1)"});
             /**** CUSTOM NAVIGATION BAR FOR INDEX ****/
         } else {
             $('#header').attr('style',  'background-image:url("../../images/header.png")');
-            $('#header').attr('style',  'height:150px');
+            $('#header').attr('style',  'height:' + hh);
             $(".main-nav a").css({color: "rgba(255,255,255,1)"});
             $(".main-nav a:hover").css({color: "#fff"});
         }
