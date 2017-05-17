@@ -91,7 +91,7 @@ a:link, a:visited {
 }
 #main{
     background-color: #fff;
-    padding-bottom: 10%;
+    padding-bottom: 160px;
 }
 .sidenav img {
     float: left;
@@ -164,6 +164,10 @@ a:link, a:visited {
     visibility: hidden;
 }
 @media screen and (max-width: 993px) {
+    #main{
+        background-color: #fff;
+        padding-bottom: 0;
+    }
     .main-menu-bar {
         position: fixed;
         display: block;
@@ -181,7 +185,7 @@ a:link, a:visited {
         z-index: 999;
         top: 0;
         right: -250px;
-        background-color: #222;
+        background-color: #131112;
         overflow-x: hidden;
         padding-top: 4em;
         visibility: visible;
@@ -234,6 +238,7 @@ a:link, a:visited {
     }
     #header {
         position: fixed;
+        margin-top: -5px;
         top: 0;
         width: 100%;
         z-index: 999;
@@ -241,8 +246,8 @@ a:link, a:visited {
         transition: background-color 200ms linear;
         background-image: url("../../images/header.png");
         background-repeat:no-repeat;
-        background-size: 200% 100%;
-        background-position: 90% -20%;
+        background-size: 343% 100%;
+        background-position: 97% -20%;
         height: 70px;
     }
 }
@@ -688,7 +693,7 @@ a:link, a:visited {
     display: block;
 }
 .products h2 {
-    font-size:	3em;
+    font-size: 2.5em;
     font-weight: bold;
     margin: 0;
     margin-bottom: 5px;
@@ -749,7 +754,7 @@ a:link, a:visited {
     width: 50%;
     float: left;
     box-sizing: border-box;
-    padding-right: 20px;
+    padding: 1em
     opacity: 1;
 }
 .prod-image:hover {
@@ -947,6 +952,21 @@ a:link, a:visited {
 .prod-image.active img {
     opacity: 0.4;
 }
+@media screen and (max-width: 993px){
+    .prod-image.active figcaption::before{
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        border: 2px solid #24579d;
+    }
+    .grid figure h3 {
+        font-size: 0.8em;
+    }
+    .prod-image.active h3 {
+        font-size: 80%;
+    }
+}
 /*End here*/
 
 
@@ -1118,11 +1138,11 @@ footer {
     display: none;
     height: 60px;
     width: 60px;
-    left: 15%;
+    left: 50%;
     margin-left: -30px;
     position: absolute;
     top: -30px;
-    background: #222;
+    background: #131112;
     -moz-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -1136,7 +1156,7 @@ footer {
     height: 50px;
     position: absolute;
     margin-left: -50px;
-    left: 15%;
+    left: 50%;
     top: -30px;
     text-align: center;
     font-size: .75em;
@@ -1222,7 +1242,7 @@ footer a:link,footer a:visited {
         box-sizing: border-box;
         padding: 20px;
         height: auto;
-        background: #222;
+        background: #131112;
         transition: all 0.5s ease;
         text-align: center;
     }
@@ -1238,7 +1258,7 @@ footer a:link,footer a:visited {
         flex-wrap: wrap;
     }
     footer .row > div.col-xs-6 {
-        background: #222;
+        background: #131112;
         padding: 20px 4px 0 4px;
         z-index: 99;
         float: left;
@@ -1251,7 +1271,7 @@ footer a:link,footer a:visited {
     .col-center {
         width: 100%;
         margin-top: -1px;
-        background: #222;
+        background: #131112;
         text-align: center;
     }
     .footer-btn-contact {
@@ -1267,6 +1287,17 @@ footer a:link,footer a:visited {
         margin-top: 20px;
         padding-top: 20px;
         text-align: center;
+    }
+    #footer:before {
+        content: " ";
+        background-image: url(../../images/footer.png);
+        position: absolute;
+        height: 85px;
+        width: 100%;
+        top: -65px;
+        background-size: 250% 100%;
+        background-position: 10% 100%;
+        background-repeat: no-repeat;
     }
 }
 /*** SITEMAP-LINKS FIX ***/
