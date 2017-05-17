@@ -13,14 +13,14 @@ $("#preloader").ready(function() {
 
 ;(function($, window, document, undefined) {
 
+    var slickTimer;
 
     /************* PRELOADER FUNCTIONS ****************/
     $(window).on('load', function() {
         $("#preloader").fadeOut();
         $('.hero .single-item').slick('slickGoTo', '0');
-        $('.hero .single-item').slick('slickPlay');
-    });
 
+    });
 
     /************** NAVBAR HIDE ON SCROLL **********/
 
@@ -75,6 +75,7 @@ $("#preloader").ready(function() {
             $('#header').attr('style',  'height:150px');
             $(".main-nav a").css({color: "rgba(36,87,157,1)"});
             $(".main-nav a:hover").css({color: "rgba(36,87,157,1)"});
+            /**** CUSTOM NAVIGATION BAR FOR INDEX ****/
         } else {
             $('#header').attr('style',  'background-image:url("../../images/header.png")');
             $('#header').attr('style',  'height:150px');
@@ -110,36 +111,31 @@ $("#preloader").ready(function() {
     $('.hero').ready( function(){
         $('.hero .single-item').slick({
             arrows: false,
-            autoplay: true,
+            autoplay: false,
             dots: true,
-            autoplaySpeed: 3000,
             infinite: true,
             swipeToSlide: true
         });
 
-        $('.hero .single-item').slick('slickPause');
-
-
-        var item_length = $(".slide-item").length-2;
-        var current_slide = 0;
-        var fired = false;
 
         $('.hero').on('beforeChange', function(event, slick, direction){
 
-            $(".hero-text h1").css({visibility: "hidden"}).removeClass("animated fadeIn");
-            $(".slide-line-active").removeClass("line-animation");	
+            $(".hero-text h1").css({visibility: "hidden"}).removeClass("animated fadeInDown");
+            $(".slide-line-active").removeClass("line-animation");
+            $(".slide-line-left-circle").removeClass("left-circle-animation");
+            $(".slide-line-right-circle").removeClass("right-circle-animation");
+            clearInterval(slickTimer);
         });
 
         $('.hero').on('afterChange', function(slide, index){
-            $(".hero-text h1").css({visibility: "visible"}).addClass("animated fadeIn");
+            $(".hero-text h1").css({visibility: "visible"}).addClass("animated fadeInDown");
             $(".slide-line-active").addClass("line-animation");
-            current_slide++;
-            fired = false;
+            $(".slide-line-left-circle").addClass("left-circle-animation");
+            $(".slide-line-right-circle").addClass("right-circle-animation");
+            slickTimer = setInterval(function(){ $('.hero .single-item').slick('slickNext'); }, 3200);
         });
 
-        $(".slide-line-active").one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-            $('.hero .single-item').slick('slickNext');
-        });
+
 
     });
 
