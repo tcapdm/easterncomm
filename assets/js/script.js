@@ -61,24 +61,28 @@ $("#preloader").ready(function() {
     }
 
     $(window).scroll(function(event){
+        $.doTimeout( 'scroll', 100, function(){
         didScroll = true;
+        });
     });
 
     /**************** NAVBAR COLOR ************************/
 
     $(document).scroll(function () {
-        var scrollPosition = $(window).scrollTop();
-        if(scrollPosition > 100) {
-            $('#header').attr('style',  'background-image:url("../../images/header.png")');
-            $('#header').attr('style',  'height:' + hh);
-            $(".main-nav a:hover").css({color: "rgba(255,255,255,1)"});
-            /**** CUSTOM NAVIGATION BAR FOR INDEX ****/
-        } else {
-            $('#header').attr('style',  'background-image:url("../../images/header.png")');
-            $('#header').attr('style',  'height:' + hh);
-            $(".main-nav a").css({color: "rgba(255,255,255,1)"});
-            $(".main-nav a:hover").css({color: "#fff"});
-        }
+        $.doTimeout( 'scroll', 100, function(){
+            var scrollPosition = $(window).scrollTop();
+            if(scrollPosition > 100) {
+                $('#header').attr('style',  'background-image:url("../../images/header.png")');
+                $('#header').attr('style',  'height:' + hh);
+                $(".main-nav a:hover").css({color: "rgba(255,255,255,1)"});
+                /**** CUSTOM NAVIGATION BAR FOR INDEX ****/
+            } else {
+                $('#header').attr('style',  'background-image:url("../../images/header.png")');
+                $('#header').attr('style',  'height:' + hh);
+                $(".main-nav a").css({color: "rgba(255,255,255,1)"});
+                $(".main-nav a:hover").css({color: "#fff"});
+            }
+        });
     });
 
     /**************** SIDENAV TOGGLE ************************/

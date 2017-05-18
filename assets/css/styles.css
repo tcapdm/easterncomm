@@ -82,7 +82,8 @@ a:link, a:visited {
     width: 100%;
     z-index: 999;
     padding-bottom: 20px;
-    transition: all 0.2s ease-out;
+    -webkit-transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
     background-image: url("../../images/header.png");
     background-repeat:no-repeat;
     background-size: 100% 100%;
@@ -667,8 +668,8 @@ a:link, a:visited {
     padding-left: 15%;
     padding-right: 1em;
     padding-top: 40px;
-    padding-bottom: 40px;
-    background: #2f9c32;
+    padding-bottom: 20px;
+    background: #2371b9;
 }
 
 .prod-col-left > a {
@@ -799,7 +800,7 @@ a:link, a:visited {
     padding-left: 15px;
     color: #fff;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 9px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
@@ -831,6 +832,7 @@ a:link, a:visited {
 .grid figure h2 {
     word-spacing: -0.15em;
     font-weight: 300;
+    color: #fff;
 }
 
 .grid figure h2 span {
@@ -844,7 +846,8 @@ a:link, a:visited {
 
 .grid figure p {
     letter-spacing: 1px;
-    font-size: 68.5%;
+    font-size: 16px;
+    color: #fff;
 }
 
 /*End here*/
@@ -854,8 +857,7 @@ a:link, a:visited {
 /*---------------*/
 
 figure.effect-lexi {
-    background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
-    background: linear-gradient(-45deg, #000 0%,#fff 100%);
+    background-color: #24579d;
 }
 
 figure.effect-lexi img {
@@ -863,7 +865,7 @@ figure.effect-lexi img {
     max-width: none;
     width: -webkit-calc(100% + 10px);
     width: calc(100% + 10px);
-    opacity: 0.9;
+    opacity: 0.5;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
     -webkit-transform: translate3d(10px,10px,0);
@@ -884,7 +886,7 @@ figure.effect-lexi figcaption::before {
     bottom: -150px;
     width: 270px;
     height: 270px;
-    border: 2px solid #fff;
+    border: 2px solid #4d9d45;
     border-radius: 50%;
     box-shadow: 0 0 0 900px rgba(255,255,255,0.2);
     content: '';
@@ -934,6 +936,114 @@ figure.effect-lexi:hover p {
     transform: translate3d(0,0,0);
 }
 
+/**** APPEARANCE ON ACTIVE STATE OF PRODUCT SELECTION ****/
+/*
+.prod-image.active figcaption::before{
+    position: absolute;
+    right: -100px;
+    bottom: -150px;
+    width: 270px;
+    height: 270px;
+    border: 5px solid #97ea99;
+    border-radius: 50%;
+    box-shadow: 0 0 0 900px rgba(0,0,0,0.5);
+    content: '';
+    opacity: 1;
+    -webkit-transform: scale3d(0.5,0.5,1);
+    transform: scale3d(0.5,0.5,1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+.prod-image.active img {
+    margin: -10px 0 0 -10px;
+    max-width: none;
+    width: -webkit-calc(100% + 10px);
+    width: calc(100% + 10px);
+    opacity: 1;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(10px,10px,0);
+    transform: translate3d(10px,10px,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.prod-image.active figcaption::before {
+    opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+}
+.prod-image.active figure h2 {
+    color: #fff;
+}
+*/
+.prod-image.active figure h2 {
+    color: #fff;
+}
+.prod-image.active figure p{
+    display: none;
+}
+.prod-image.active figcaption::before{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    opacity: 1;
+}
+.prod-image.active img {
+    margin: -10px 0 0 -10px;
+    width: -webkit-calc(100% + 10px);
+    width: calc(100% + 10px);
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.active.grid figure figcaption, .active.grid figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.active.grid figure figcaption {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 9px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.active figcaption:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    margin: auto;
+}
+.active figcaption#overlayViolet:after{
+    background-color: rgba(88, 67, 155, 0.6);
+}
+.active figcaption#overlayBlue:after{
+    background-color: rgba(40, 194, 236, 0.6);
+}
+.active figcaption#overlayOrange:after{
+    background-color: rgba(243, 131, 33, 0.6);
+}
+.active figcaption#overlayYellowGreen:after{
+    background-color: rgba(117, 188, 67, 0.6);
+}
+.prod-image.active figure h2 {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
 /**** END LEXI EFFECT ****/
 
 .prod-controls {
@@ -999,6 +1109,13 @@ figure.effect-lexi:hover p {
     position: relative;
     background-color: #e0e0e0;
 }
+.service-area:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 250px;
+    background-color: #e0e0e0;
+}
 .service-area h3{
 	margin-top: 0;
 }
@@ -1021,6 +1138,7 @@ figure.effect-lexi:hover p {
 
 @media screen and (max-width: 993px) {
     #map {
+        margin-top: 2em;
         height: 300px;
     }
 }
