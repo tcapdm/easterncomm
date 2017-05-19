@@ -217,8 +217,16 @@ $("#preloader").ready(function() {
             $("#sitemap-links a").css({
                 visibility: "visible"
             });
-            $("#sitemap-toggle i").removeClass("fa-chevron-up");
-            $("#sitemap-toggle i").addClass("fa-chevron-down");
+            $("#sitemap-links").css({
+                background: "#131112"
+            });
+            $("#sitemap-toggle").css({
+                background: "#131112",
+                borderRadius: "10px",
+                padding: "5px 15px 0 15px"
+            });
+            // $("#sitemap-toggle i").removeClass("fa-chevron-up");
+            // $("#sitemap-toggle i").addClass("fa-chevron-down");
             sitemapShow = true;
         }else {
             $("#sitemap-toggle, #sitemap-bg").css({
@@ -230,12 +238,16 @@ $("#preloader").ready(function() {
             $("#sitemap-links a").css({
                 visibility: "hidden"
             });
-            $("#sitemap-toggle i").removeClass("fa-chevron-down");
-            $("#sitemap-toggle i").addClass("fa-chevron-up");
+            $("#sitemap-links").css({
+                background: "none"
+            });
+            $("#sitemap-toggle").css({
+                background: "none"
+            });
+            // $("#sitemap-toggle i").removeClass("fa-chevron-down");
+            // $("#sitemap-toggle i").addClass("fa-chevron-up");
             sitemapShow = false;
         }
     });
-
-
 })(jQuery, window, document);
 
