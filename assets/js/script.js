@@ -21,78 +21,20 @@ $("#preloader").ready(function() {
         $('.hero .single-item').slick('slickGoTo', '0');
 
     });
-
-    /************** NAVBAR HIDE ON SCROLL **********/
-
-    // var $window = $(window),
-    //     $document = $(document),
-    //     docHeight = $document.innerHeight(),
-    //     winWidth = $window.innerWidth(),
-    //     winHeight = $window.innerHeight(),
-    //     hh = $('#header').innerHeight();
-    // var didScroll;
-    // var lastScrollTop = 0;
-    // var delta = 0;
-
-    // setInterval(function() {
-    //     if (didScroll) {
-
-    //         hasScrolled();
-    //         didScroll = false;
-    //     }
-    // });
-
-    // function hasScrolled() {
-    //     var st = $(this).scrollTop();
-
-    //     if(Math.abs(lastScrollTop - st) <= delta)
-    //         return;
-
-    //     if (st > lastScrollTop && st > hh){
-    //         // Scroll Down
-    //         $('#header').css({top: '-'+hh+'px'});
-    //     } else {
-    //         // Scroll Up
-    //         if(st + winHeight < docHeight) {
-    //             $('#header').css({top: 0});
-    //         }
-    //     }
-    //     lastScrollTop = st;
-    // }
    
     var scroll;
     var hh = $('#header').innerHeight();
     var lastScroll = 0;
-    $(window).scroll(function(event){
-        $.doTimeout( 'scroll', 200, function(){
-             scroll = $(window).scrollTop();
-             if(scroll > lastScroll) {
-                  $('#header').css({top: '-'+hh+'px'});   
-             } else {
-                  $('#header').css({top: 0});
-             }
-             lastScroll = scroll;
-        });
+
+    $(window).on("scrollstop", {latency: 0}, function() {
+        scroll = $(window).scrollTop();
+        if(scroll > lastScroll) {
+            $('#header').css({top: '-'+hh+'px'});   
+        } else {
+            $('#header').css({top: 0});
+        }
+        lastScroll = scroll;
     });
-
-    /**************** NAVBAR COLOR ************************/
-
-    // $(document).scroll(function () {
-    //    $.doTimeout( 'scroll', 100, function(){
-    //         var scrollPosition = $(window).scrollTop();
-    //         if(scrollPosition > 100) {
-    //             $('#header').attr('style',  'background-image:url("../../images/header.png")');
-    //             $('#header').attr('style',  'height:' + hh);
-    //             $(".main-nav a:hover").css({color: "rgba(255,255,255,1)"});
-    //             /**** CUSTOM NAVIGATION BAR FOR INDEX ****/
-    //         } else {
-    //             $('#header').attr('style',  'background-image:url("../../images/header.png")');
-    //             $('#header').attr('style',  'height:' + hh);
-    //             $(".main-nav a").css({color: "rgba(255,255,255,1)"});
-    //             $(".main-nav a:hover").css({color: "#fff"});
-    //         }
-    //     });
-    // });
 
     /**************** SIDENAV TOGGLE ************************/
     $('#openNav').click(function(){
@@ -115,6 +57,17 @@ $("#preloader").ready(function() {
         $("body").animate({left: "0"});
         $('#main, footer').css({opacity: '1'});
     });
+
+/**************** SIDENAV TOGGLE CLICK EVENTS************************/
+jQuery(function($) {
+    $('a.dropbtn').click(function() {
+        $(this).next('.dropdown-content').slideToggle();
+        return false;
+    }).dblclick(function() {
+        window.location = this.href;
+        return false;
+    });
+});
 
     /**************** HERO SLIDER EVENTS *****************/
 
