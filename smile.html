@@ -7,15 +7,18 @@
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/loading-style.css">
     <style>
-        svg.line {max-width: 60%; left: 0; right: 0; margin: auto; transform: translateY(-50%); position: absolute; top: 50%;}
+        svg.line {max-width: 30%; left: 0; right: 0; margin: auto; transform: translateY(-50%); position: absolute; top: 50%;}
         svg.line .gline path {
-            stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: Lineflow 2s linear forwards infinite;
+            stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: Lineflow 2s backwards infinite; animation-delay: 1s
         }
         @keyframes Lineflow {to{stroke-dashoffset: 0; stroke-width: 30;}}
 
-        svg.line .gcircles path {stroke-dasharray: 500;stroke-dashoffset: 500;-webkit-animation: Circleflow 1s ease-in-out forwards infinite;animation: Circleflow 1s ease-in-out forwards infinite; animation-delay: 1s}
+        svg.line .gLeftdot path {stroke-dasharray: 500;stroke-dashoffset: 500;-webkit-animation: Circleflow 1s linear forwards infinite;animation: Circleflow 1s linear forwards infinite;}
         @keyframes Circleflow {to{stroke-dashoffset:0; stroke-width: 1px;}}
+
+        svg.line .gRightdot path {stroke-dasharray: 500;stroke-dashoffset: 500;-webkit-animation: Circleflow 1s linear forwards infinite;animation: Circleflow 1s linear forwards infinite; animation-delay: 0.5s}
         
+    
         @media screen and (max-width: 1024px){
             svg.line {max-width: 100%}
         }
@@ -117,7 +120,7 @@
 		c1.29-3.091,4.68-4.66,8.05-3.87C321.83,24.722,324.08,27.612,324.02,31.012z"/>
     </g>
 
-    <g class="gcircles" clipPath="url(#gcircleRight)">
+    <g class="gRightdot" clipPath="url(#gcircleRight)">
 	<path fill="none" stroke="#2f9c32" d="M317.316,57.94c-9.194,0.17-18.252-4.327-23.525-12.667
 		c-8.029-12.701-4.242-29.506,8.458-37.536c12.701-8.03,29.507-4.243,37.536,8.458"/>
 	<path fill="none" stroke="#2f9c32" d="M313.708,7.359c8.826-1.157,17.934,2.76,23.004,10.778
@@ -149,7 +152,7 @@
 </g>
 
 
-<g class="gcircles" clipPath="url(#gcircleLeft)">
+<g class="gLeftdot" clipPath="url(#gcircleLeft)">
 	<path fill="none" stroke="#2f9c32" d="M32.957,57.933c-9.194,0.17-18.252-4.327-23.525-12.667
 		C1.402,32.564,5.189,15.76,17.89,7.729c12.701-8.03,29.507-4.243,37.536,8.458"/>
 	<path fill="none" stroke="#2f9c32" d="M29.349,7.352c8.826-1.157,17.934,2.76,23.004,10.778
