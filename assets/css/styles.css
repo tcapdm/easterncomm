@@ -1683,15 +1683,13 @@ ol.breadcrumb{
     margin-left: 0;
 }
 .news-item-date {
-    margin-top: 3em;
-	border-bottom: 1px solid #c0c0c0;
+    margin: 3em 0 2em 1em;
     justify-content: center;
-    position: absolute;
-    left: 0;
+    position: relative;
     min-width: 200px;
 }
 .news-text-date{
-    text-align: right;
+    text-align: left;
     margin-top: 2em;
     line-height: 0px;
 }
@@ -1704,14 +1702,13 @@ ol.breadcrumb{
 .news-text-date p > span{
 	color: #c0c0c0;
     letter-spacing: 4px;
-    font-size: 90%;
+    font-size: 110%;
 }
 .news .row {
     position: relative;
 }
 .news-info {
     font-size: 0.9em;
-    margin-top: 15px;
     font-weight: bold;
 }
 .news-info span{
@@ -1742,9 +1739,9 @@ ol.breadcrumb{
     left:    0;
     bottom:   0;
 }
-.newslist-summary {
+/*.newslist-summary {
 	margin-top: 0.5em;
-}
+}*/
 .filternews-container > .row{
 	margin-right: 0;
 }
@@ -1915,6 +1912,12 @@ ol.breadcrumb{
         bottom:0;
         background: none;
         height: 20px;
+    }
+    .news-info{
+        margin-top: 2em;
+    }
+    .news-body h3{
+        margin-top: 20px;
     }
 }
 @media screen and (max-width: 1000px){
