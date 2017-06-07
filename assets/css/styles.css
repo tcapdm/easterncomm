@@ -416,43 +416,40 @@ a:link, a:visited {
 }
 .slide-item {
     width:100%;
-    height: 45vw;
+    height: 100vh;
+    min-height: 300px;
     position: relative;
     z-index: 9;
     overflow: hidden;
 }
 
 .slide-item > img {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-.hero-overlay {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url('../../images/pattern.png'), rgba(255,255,255,0.4);
-    background-repeat: repeat;
-    background-size: 5px 5px;
-    z-index: 9;
+  top: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  margin: auto;
+  min-width: 100%;
+  min-height: 100%;
 }
 .hero-text {
     position: absolute;
     width: 60%;
     text-align: center;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     z-index: 99;
+        background: url('../../images/pattern.png'), rgba(255,255,255,0.4);
+    background-repeat: repeat;
+    background-size: 5px 5px;
+    padding: 50px;
+    min-height: 150px;
 }
-.hero-text h1 {
+.hero-text h2 {
+    margin: 0;
     font-size: 3.6em;
 }
 
@@ -462,7 +459,8 @@ a:link, a:visited {
     position: absolute;
     bottom: 30px;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
 .hero .slick-dots li{
@@ -482,10 +480,12 @@ a:link, a:visited {
 .hero .slick-dots li.slick-active button{ 
     background:  #4d9d46;
 }
-.hero-text h1 span{
+.hero-text h2 span{
     display: block;
     font-size: 150%;
     font-weight: bold;
+    font-style: italic;
+    color: #4d9d46;
     padding-bottom: 25px;
     position: relative;
 }
@@ -502,12 +502,15 @@ a:link, a:visited {
     content: "";
     width: 20px;
     height: 20px;
-    transform: translateY(-40%);
+    -webkit-transform: translateY(-40%);
+            transform: translateY(-40%);
     border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 .slide-line-left-circle {
     left: -10px;
+    background: -webkit-linear-gradient(left, #fff 50%, #4d9d46 50%);
     background: linear-gradient(to right, #fff 50%, #4d9d46 50%);
     background-size: 200% 100%;
     background-position: left bottom;
@@ -515,32 +518,50 @@ a:link, a:visited {
 
 .slide-line-right-circle {
     right: -10px;
+    background: -webkit-linear-gradient(left, #4d9d46 50%, #fff 50%);
     background: linear-gradient(to right, #4d9d46 50%, #fff 50%);
     background-size: 200% 100%;
     background-position: right bottom;    
 }
 
 .right-circle-animation {
-    animation-name: rightCircle;
-    animation-delay: 2.9s;
-    animation-duration: 0.1s;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: rightCircle;
+            animation-name: rightCircle;
+    -webkit-animation-delay: 2.9s;
+            animation-delay: 2.9s;
+    -webkit-animation-duration: 0.1s;
+            animation-duration: 0.1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
     animation-timing-function: linear;
 }
 
 .left-circle-animation {
-    animation-name: leftCircle;
-    animation-delay: 2.9s;
-    animation-duration: 0.1s;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: leftCircle;
+            animation-name: leftCircle;
+    -webkit-animation-delay: 2.9s;
+            animation-delay: 2.9s;
+    -webkit-animation-duration: 0.1s;
+            animation-duration: 0.1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
     animation-timing-function: linear;
+}
+
+@-webkit-keyframes leftCircle {
+    from { background-position: left bottom;   }
+    to { background-position: right bottom;   }
 }
 
 @keyframes leftCircle {
     from { background-position: left bottom;   }
     to { background-position: right bottom;   }
+}
+@-webkit-keyframes rightCircle {
+    from { background-position: right bottom;   }
+    to { background-position: left bottom;   }
 }
 @keyframes rightCircle {
     from { background-position: right bottom;   }
@@ -552,16 +573,25 @@ a:link, a:visited {
     width: 0%;
     left: 50%;
     border-bottom: 5px solid #4d9d46;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     bottom: -5px;
 }
 
 .line-animation {
-    animation-name: lineWidth;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: lineWidth;
+            animation-name: lineWidth;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
     animation-timing-function: linear;
+}
+
+@-webkit-keyframes lineWidth {
+    from {width: 0%;}
+    to {width: 100%;}
 }
 
 @keyframes lineWidth {
@@ -588,18 +618,14 @@ a:link, a:visited {
     color: #4d9d46;
 }
 @media screen and (max-width: 993px) {
-    
-    .slide-item {
-        top: 20px;        
-        height: 56.25vw;
-    }
     .hero-text {
         width: 80%;
+        padding: 20px;
     }
-    .hero-text h1 {
+    .hero-text h2 {
         font-size: 2.6em;
     }
-    .hero-text h1 span {
+    .hero-text h2 span {
         padding-bottom: 15px;
     }
 
@@ -615,10 +641,11 @@ a:link, a:visited {
 }
 
 @media screen and (max-width: 600px) {
-    .hero-text h1 {
+
+    .hero-text h2 {
         font-size: 1.6em;
     }
-    .hero-text h1 span {
+    .hero-text h2 span {
         padding-bottom: 0;
     }
 
@@ -635,19 +662,15 @@ a:link, a:visited {
 }
 
 @media screen and (max-width: 400px) {
-    .slide-item {
-        top: 40px;        
-        height: 56.25vw;
-    }
     .hero-text {
         width: 90%;
-        top: 40%;
+        bottom: 60px;
     }
-    .hero-text h1 {
+    .hero-text h2 {
         margin: 0;
         font-size: 1.25em;
     }
-    .hero-text h1 span {
+    .hero-text h2 span {
         padding-bottom: 0;
     }
 
@@ -680,7 +703,8 @@ a:link, a:visited {
     .slide-line-left-circle, .slide-line-right-circle {
         width: 10px;
         height: 10px;
-        transform: translateY(-30%);
+        -webkit-transform: translateY(-30%);
+                transform: translateY(-30%);
     }
     .slide-line-left-circle {
         left: -5px;
@@ -692,7 +716,8 @@ a:link, a:visited {
 
     .slide-line-active {
         border-bottom: 4px solid #4d9d46;
-        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
         bottom: -4px;
     }
 }
