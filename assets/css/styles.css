@@ -1713,6 +1713,12 @@ ol.breadcrumb{
     position: relative;
     min-width: 200px;
 }
+.main-news-img{
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
 .news-text-date{
     text-align: left;
     margin-top: 2em;
@@ -3465,7 +3471,24 @@ span.prod-feat-title{
 .data .prod-include-repo > .col-md-6:nth-child(odd){
     border-right: 2px solid #5ec3a5;
 }
-
+.data .prod-main-menu-box span{
+    color: #5ec3a5;
+}
+.data .prod-main-menu-box li a{
+    color: #5ec3a5;
+}
+.data .prod-main-menu-box li:hover::before{
+    color: #5ec3a5;
+}
+.data .btnreadmore{
+    color: #5ec3a5;
+}
+.data .prod-main-menu-desc{
+    border-top-color: #5ec3a5;
+}
+.data .other-prod a{
+    color: #5ec3a5;
+}
 /**** ADD CLASS INTERNET ****/
 .internet .prod-entry-box h2{
     color: #1d88ce;
@@ -3479,7 +3502,24 @@ span.prod-feat-title{
 .internet .prod-include-repo > .col-md-6:nth-child(odd){
     border-right: 2px solid #1d88ce;
 }
-
+.internet .prod-main-menu-box span{
+    color: #1d88ce;
+}
+.internet .prod-main-menu-box li a{
+    color: #1d88ce;
+}
+.internet .prod-main-menu-box li:hover::before{
+    color: #1d88ce;
+}
+.internet .btnreadmore{
+    color: #1d88ce;
+}
+.internet .prod-main-menu-desc{
+    border-top-color: #1d88ce;
+}
+.internet .other-prod a{
+    color: #1d88ce;
+}
 /**** ADD CLASS MANAGED ****/
 .managed .prod-entry-box h2{
     color: #f7941d;
@@ -3493,7 +3533,24 @@ span.prod-feat-title{
 .managed .prod-include-repo > .col-md-6:nth-child(odd){
     border-right: 2px solid #f7941d;
 }
-
+.managed .prod-main-menu-box span{
+    color: #f7941d;
+}
+.managed .prod-main-menu-box li a{
+    color: #f7941d;
+}
+.managed .prod-main-menu-box li:hover::before{
+    color: #f7941d;
+}
+.managed .btnreadmore{
+    color: #f7941d;
+}
+.managed .prod-main-menu-desc{
+    border-top-color: #f7941d;
+}
+.managed .other-prod a{
+    color: #f7941d;
+}
 /**** ADD CLASS VOICE ****/
 .voice .prod-entry-box h2{
     color: #714499;
@@ -3506,4 +3563,22 @@ span.prod-feat-title{
 }
 .voice .prod-include-repo > .col-md-6:nth-child(odd){
     border-right: 2px solid #714499;
+}
+.voice .prod-main-menu-box span{
+    color: #714499;
+}
+.voice .prod-main-menu-box li a{
+    color: #714499;
+}
+.voice .prod-main-menu-box li:hover::before{
+    color: #714499;
+}
+.voice .btnreadmore{
+    color: #714499;
+}
+.voice .prod-main-menu-desc{
+    border-top-color: #714499;
+}
+.voice .other-prod a{
+    color: #714499;
 }

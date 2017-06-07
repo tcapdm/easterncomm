@@ -36,7 +36,7 @@ $(document).ready(function(){
     //End Here
     $('.block').not(':first,.third,:last').addClass('empty').append('<span class="btn" id="next"><i class="fa fa-long-arrow-right "></i> Next</span>').append('<span class="btn" id="prev"><i class="fa fa-long-arrow-left"></i> Previous</span>');
     // Next/prev function
-    $('.btn').click(function () {
+    $('.btn').click(function (event) {
         var dir = event.target.id;
         var current = $('.current')
         , next = $('.current').next('div')
