@@ -14,14 +14,14 @@ $(document).ready(function(){
         $(this).parent().parent().toggleClass('border-bottom');
     });
 
-    // show ulnav-tabs on click
-    $(".menu-button").click(function(){
-        $(this).siblings('.nav-tabs').toggleClass("show-nav");
-    });
+    // // show ulnav-tabs on click
+    // $(".menu-button").click(function(){
+    //     $(this).siblings('.nav-tabs').toggleClass("show-nav");
+    // });
 
     // remove class show-nav
     $("ul#contact-nav>li>a").click(function(){
-        $(this).parent('li').parent('ul.show-nav').removeClass("show-nav");
+        // $(this).parent('li').parent('ul.show-nav').removeClass("show-nav");
     });
 
 
