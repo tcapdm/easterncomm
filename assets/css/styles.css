@@ -2372,7 +2372,7 @@ div.row.about-sec-02{
 #faq1>ul{text-align: left;list-style: none;padding-left: 0;}
 
 .contact-content .nav-tabs-custom {position: relative; margin-top: 3em;}
-.show-nav {position: fixed; isplay: block!important;opacity: 1!important;-webkit-animation: anim-jelly 0.8s linear forwards;animation: anim-jelly 0.8s linear forwards;}
+.show-nav {position: fixed; display: block!important;opacity: 1!important;-webkit-animation: anim-jelly 0.8s linear forwards;animation: anim-jelly 0.8s linear forwards;}
 .menu-button {display: none;position: fixed;bottom: 20px;left: 5px;z-index: 1000;padding: 0;width: 2.5em;height: 2.5em;border: none;font-size: 1.5em;color: #fff;background: #0a6a9a; border-radius: 50%;line-height: 0;box-shadow: 1px 1px 10px #000;
 -moz-transition: all 1s ease;
         -webkit-transition: all 1s ease;
@@ -2458,11 +2458,18 @@ input[type='radio']:checked:after {
 	width: 70%;
     margin: 0 auto;
 }
+.nav.nav-tabs a i{display: none;}
 @media screen and (max-width: 673px) {
     .contact-content .menu-button {display: block;}
     .contact-content .nav-tabs>li {float: none;text-align: left;}
+    .contact-content .nav-tabs>li>a{margin: 0;}
+    .contact-content .nav-tabs>li.active>a{margin: 0;}
+    .contact-content .nav-tabs li:first-child.active a{border-radius: 10px 10px 0 0;}
+    .contact-content .nav-tabs li:last-child.active a{border-radius: 0 0 10px 10px;}
+    .contact-content .nav-tabs li a > span{display: none;}
+    .contact-content .nav-tabs li a i{font-size: 2em; padding: 5px; text-align: center;display: block;}
     .contact-content .nav.nav-tabs {display: block;position: fixed;background-color: rgba(255,255,255,1);opacity: 0;bottom: 85px;left: 5px;z-index: 999;-webkit-transition: width 0.3s, height 0.3s;transition: width 0.3s, height 0.3s;-webkit-transform-origin: 0% 100%;transform-origin: 0% 100%;
-    box-shadow: 2px 5px 10px #000;}
+    box-shadow: 2px 5px 10px #000;border-radius: 10px;}
     /*.contact-content .nav.nav-tabs::before{
         content: '';
         display: block;
@@ -2477,9 +2484,9 @@ input[type='radio']:checked:after {
     content: " ";
     position: absolute;
     top: 100%;
-    left: 12%;
-    margin-left: -10px;
-    border-width: 10px;
+    left: 25px;
+    margin-left: -9px;
+    border-width: 9px;
     border-style: solid;
     border-color: #fff transparent transparent transparent;
     }
