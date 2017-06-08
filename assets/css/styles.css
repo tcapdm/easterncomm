@@ -2372,8 +2372,12 @@ div.row.about-sec-02{
 #faq1>ul{text-align: left;list-style: none;padding-left: 0;}
 
 .contact-content .nav-tabs-custom {position: relative; margin-top: 3em;}
-.show-nav {display: block!important;opacity: 1!important;width: 230px!important;height: 245px!important;-webkit-animation: anim-jelly 0.8s linear forwards;animation: anim-jelly 0.8s linear forwards;}
-.menu-button {display: none;position: fixed;bottom: 20px;left: 5px;z-index: 1000;padding: 0;width: 2.5em;height: 2.25em;border: none;font-size: 1.5em;color: #373a47;background: transparent;}
+.show-nav {position: fixed; isplay: block!important;opacity: 1!important;-webkit-animation: anim-jelly 0.8s linear forwards;animation: anim-jelly 0.8s linear forwards;}
+.menu-button {display: none;position: fixed;bottom: 20px;left: 5px;z-index: 1000;padding: 0;width: 2.5em;height: 2.5em;border: none;font-size: 1.5em;color: #fff;background: #0a6a9a; border-radius: 50%;line-height: 0;box-shadow: 1px 1px 10px #000;
+-moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;}
 
 /****Payment facilities****/
 .payment li p:before{content: "\f101";font-family: "FontAwesome";margin-right: 5px;color: #0063a7;}
@@ -2457,13 +2461,47 @@ input[type='radio']:checked:after {
 @media screen and (max-width: 673px) {
     .contact-content .menu-button {display: block;}
     .contact-content .nav-tabs>li {float: none;text-align: left;}
-    .contact-content .nav.nav-tabs {position: fixed;display: none;opacity: 0;bottom: 28px;right: 9px;padding: 20px 0;width: 0;height: 0;z-index: 999;background: #ebedf4;-webkit-transition: width 0.3s, height 0.3s;transition: width 0.3s, height 0.3s;-webkit-transform-origin: 0% 100%;transform-origin: 0% 100%;}
+    .contact-content .nav.nav-tabs {display: block;position: fixed;background-color: rgba(255,255,255,1);opacity: 0;bottom: 85px;left: 5px;z-index: 999;-webkit-transition: width 0.3s, height 0.3s;transition: width 0.3s, height 0.3s;-webkit-transform-origin: 0% 100%;transform-origin: 0% 100%;
+    box-shadow: 2px 5px 10px #000;}
+    /*.contact-content .nav.nav-tabs::before{
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(10, 106, 154, 0.8);
+        height: 1000px;
+        width: 1000px;
+        bottom: 0;
+        transition: all 0.5ms ease-in-out;
+    }*/
+    .contact-content .nav.nav-tabs::after{
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 12%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    }
     .hotline-list {
         padding: 0;
     }
-    .contact-content .nav-tabs>li.active>a,.contact-content .nav-tabs>li.active>a:focus,.contact-content .nav-tabs>li.active>a:hover{position: relative;background-color: #24579d;border: none;border-radius: 0;border: none;color: #fff; padding: 0.5em;}
+    .contact-content .nav-tabs>li.active>a,.contact-content .nav-tabs>li.active>a:focus,.contact-content .nav-tabs>li.active>a:hover{background-image: none;position: relative;background-color: #24579d;border: none;border-radius: 0;border: none;color: #fff; padding: 0.5em;}
     .contact-content .nav>li>a:focus, .nav>li>a:hover{position: relative;background-color: transparent;border: none;border-radius: 0;border: none;color: #0063a7;}
-    
+    .menu-button .menuclicked::before{
+        content: "\f00d";
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+
+        -moz-transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        display: inline-block;
+    }
     .accordion .content{padding: 0;}
     ul.banks li{width: 44%;padding-right: 20px;margin-bottom: 30px;}
     #tab3 button, #tab4 button{padding-left: 0;}
@@ -3435,6 +3473,7 @@ span.prod-feat-title{
 .other-prod h4{
     font-size: 150%;
     margin-bottom: 1em;
+    font-weight: bold;
 }
 .other-prod{
     border: 1px solid #c0c0c0;

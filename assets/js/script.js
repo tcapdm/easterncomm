@@ -36,6 +36,12 @@ $("#preloader").ready(function() {
         lastScroll = scroll;
     });
 
+ //Create animations for navigation show
+    $(".menu-button").click(function(e){
+        e.preventDefault();
+        $(".con-menu").toggleClass('menuclicked');
+    });
+
     /**************** SIDENAV TOGGLE ************************/
     $('#openNav').click(function(){
         $("#mySidenav").animate({right:  "0"});
@@ -202,5 +208,6 @@ jQuery(function($) {
             sitemapShow = false;
         }
     });
+
 })(jQuery, window, document);
 
